@@ -19,7 +19,7 @@ $(document).ready(function(){
         //save these values to local storage
         localStorage.setItem(time,textArea);
     })
-})
+
 
 //need the current hour, will go from 9-16
 //need to give if it's the past/present/future
@@ -32,6 +32,8 @@ function hoursTime(){
     $(".time-block").each(function(){
         var timeBlockElement = parseInt($(this).attr("id"));
 
+        console.log(this);
+
         //adding color for future
         if(timeBlockElement > currentHour){
             $(this).addClass("future");
@@ -41,7 +43,7 @@ function hoursTime(){
             $(this).addClass("present");
         }
         //adding color for past
-        else if(timeBlockElement < currentHour){
+        else if(timeBlockElement <currentHour){
             $(this).addClass("past");
         }
     })
@@ -56,5 +58,7 @@ $("13 .text").val(localStorage.getItem("13"));
 $("14 .text").val(localStorage.getItem("14"));
 $("15 .text").val(localStorage.getItem("15"));
 $("16 .text").val(localStorage.getItem("16"));
-
+$("17 .text").val(localStorage.getItem("17"));
 hoursTime();
+
+})
