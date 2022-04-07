@@ -21,7 +21,7 @@ $(document).ready(function(){
     })
 })
 
-//need the current hour, will go from 8-17
+//need the current hour, will go from 9-16
 //need to give if it's the past/present/future
 
 function hoursTime(){
@@ -46,3 +46,15 @@ function hoursTime(){
         }
     })
 }
+
+//need to load each saved item per hour through jquery
+$("9 .text").val(localStorage.getItem("9"));
+$("10 .text").val(localStorage.getItem("10"));
+$("11 .text").val(localStorage.getItem("11"));
+$("12 .text").val(localStorage.getItem("12"));
+$("13 .text").val(localStorage.getItem("13"));
+$("14 .text").val(localStorage.getItem("14"));
+$("15 .text").val(localStorage.getItem("15"));
+$("16 .text").val(localStorage.getItem("16"));
+
+hoursTime();
