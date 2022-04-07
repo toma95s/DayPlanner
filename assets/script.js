@@ -21,3 +21,28 @@ $(document).ready(function(){
     })
 })
 
+//need the current hour, will go from 8-17
+//need to give if it's the past/present/future
+
+function hoursTime(){
+    var currentHour = moment().hours();
+
+    //will need to do a jquery loop to go through each time block and 
+    //give the appropriate color per element
+    $(".time-block").each(function(){
+        var timeBlockElement = parseInt($(this).attr("id"));
+
+        //adding color for future
+        if(timeBlockElement > currentHour){
+            $(this).addClass("future");
+        }
+        //adding color for present
+        else if(timeBlockElement === currentHour){
+            $(this).addClass("present");
+        }
+        //adding color for past
+        else if(timeBlockElement < currentHour){
+            $(this).addClass("past");
+        }
+    })
+}
